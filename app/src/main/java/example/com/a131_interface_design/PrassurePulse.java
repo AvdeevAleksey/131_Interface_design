@@ -18,14 +18,12 @@ public class PrassurePulse extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_prassure_pulse);
         TextView txtdateTime = findViewById(R.id.actPressureTxtDateTimeNow);
-        //Date dateTimeNow = new Date();
-        //SimpleDateFormat formatForDateNow = new SimpleDateFormat("dd.MM.yyyy ' ' hh:mm");
-        txtdateTime.setText(new SimpleDateFormat("dd.MM.yyyy ' ' hh:mm").format(new Date()));
+        txtdateTime.setText(new SimpleDateFormat("hh:mm ' ' dd.MM.yyyy").format(new Date()));
 
     }
 
     public void btnSaveClicked (View view) {
-        Intent intent = new Intent(PrassurePulse.this, MainActivity.class);
+        Intent intent = new Intent(PrassurePulse.this, Vitals.class);
         startActivity(intent);
     }
 }

@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Мониторинг здоровья</string>
-    <string name="progTitle">Комплексная система мониторинга здоровья\nАвдеев А.В.</string>
+    <string name="progTitle">Комплексная система мониторинга здоровья</string>
+    <string name="developer">Авдеев А.</string>
     <string name="fio">ФИО</string>
     <string name="age">Возраст</string>
     <string name="btn_pressure_pulse">Давление, пульс</string>
@@ -10,4 +11,6 @@
     <string name="act_pressure_lower_pressure">Нижнее давление</string>
     <string name="act_pressure_pulse">Пульс</string>
     <string name="act_pressure_tachicardia">Сдвинуть при\nтахикардии</string>
+    <string name="weight">Вес</string>
+    <string name="walk">Шаги</string>
 </resources>
