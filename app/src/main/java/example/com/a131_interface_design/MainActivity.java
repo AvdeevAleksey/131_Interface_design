@@ -8,6 +8,7 @@ import android.text.SpannableStringBuilder;
 import android.text.style.RelativeSizeSpan;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,7 +19,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-    }
+        EditText editTextFio = findViewById(R.id.editTextFio);
+        EditText editTextAge = findViewById(R.id.editTextAge);    }
 
     public void btnPressurePulseClicked (View view) {
         Intent intent = new Intent(MainActivity.this, PrassurePulse.class);
@@ -30,10 +32,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void btnSaveClicked (View view) {
+    public void btnSaveClicked (View view, EditText editTextFio, EditText editTextAge) {
         try {
-            String newUserFio = findViewById(R.id.editTextFio).toString();
-            int newUserAge = Integer.parseInt(findViewById(R.id.editTextAge).toString());
+            String newUserFio = editTextFio.getText().toString();
+            int newUserAge = Integer.parseInt(editTextAge.getText().toString());
             User newUser = new User(newUserFio,newUserAge);
         } catch (Exception ex) {
             String text = getString(R.string.main_invalid_input);
