@@ -13,4 +13,5 @@
     <string name="act_pressure_tachicardia">Сдвинуть при\nтахикардии</string>
     <string name="weight">Вес</string>
     <string name="walk">Шаги</string>
+    <string name="main_invalid_input">Некорректно введены данные\n\tВ поле ФИО введите Фамилию и Инициалы,\n\tВ поле Возраст введите целое число.</string>
 </resources>
