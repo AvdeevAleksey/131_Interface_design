@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
             try {
                 newUserFio = editTextFio.getText().toString();
                 newUserAge = Integer.parseInt(editTextAge.getText().toString());
+                User newUser = new User(newUserFio,newUserAge);
                 Intent intent = new Intent(MainActivity.this, PrassurePulse.class);
                 startActivity(intent);
             } catch (Exception ex) {

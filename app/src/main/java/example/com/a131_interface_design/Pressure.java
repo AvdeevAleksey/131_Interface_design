@@ -6,6 +6,7 @@ public class Pressure {
     int pulse;
     boolean tachicardia;
     String dateTime;
+    Vitals vitals;
 
     public Pressure(int highPressure, int lowerPressure, int pulse, boolean tachicardia, String dateTime) {
         this.highPressure = highPressure;
