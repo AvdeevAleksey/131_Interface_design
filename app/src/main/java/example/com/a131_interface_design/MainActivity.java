@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     public void showMyMessage(int massage) {
-        String text = getString(massage);
+        String text = getString(massage).toString();
         SpannableStringBuilder biggerText = new SpannableStringBuilder(text);
         biggerText.setSpan(new RelativeSizeSpan(1.35f), 0, text.length(), 0);
         Toast toast = Toast.makeText(this, biggerText, Toast.LENGTH_LONG);

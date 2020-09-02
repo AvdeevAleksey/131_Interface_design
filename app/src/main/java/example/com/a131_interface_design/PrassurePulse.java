@@ -30,6 +30,7 @@ public class PrassurePulse extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_prassure_pulse);
 
+
         highPressure = findViewById(R.id.actPressureEditTextHigh);
         lowerPressure = findViewById(R.id.actPressureEditTextLower);
         pulse = findViewById(R.id.actPressureEditTextPulse);
@@ -39,17 +40,9 @@ public class PrassurePulse extends AppCompatActivity {
     }
 
     public void btnSaveClicked (View view) {
-        if (highPressure.getText().equals("") && lowerPressure.getText().equals("") && pulse.getText().equals("")) {
-            //new MainActivity().showMyMessage(R.string.Not_all_values_are_entered);
-            String text = getString(R.string.Not_all_values_are_entered);
-            SpannableStringBuilder biggerText = new SpannableStringBuilder(text);
-            biggerText.setSpan(new RelativeSizeSpan(1.35f), 0, text.length(), 0);
-            Toast toast = Toast.makeText(this, biggerText, Toast.LENGTH_LONG);
-            toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
-            toast.show();
-
+        if (highPressure.getText().toString().equals("") && lowerPressure.getText().toString().equals("") && pulse.getText().toString().equals("")) {
+            showMyMessage(R.string.Not_all_values_are_entered);
         } else {
-
             try {
                 int newHighPressure = Integer.parseInt(highPressure.getText().toString());
                 int newLowerPressure = Integer.parseInt(lowerPressure.getText().toString());
@@ -60,15 +53,17 @@ public class PrassurePulse extends AppCompatActivity {
                 Intent intent = new Intent(PrassurePulse.this, Vitals.class);
                 startActivity(intent);
             } catch (Exception ex) {
-                //new MainActivity().showMyMessage(R.string.pressure_invalid_input);
-                String text = getString(R.string.pressure_invalid_input);
-                SpannableStringBuilder biggerText = new SpannableStringBuilder(text);
-                biggerText.setSpan(new RelativeSizeSpan(1.35f), 0, text.length(), 0);
-                Toast toast = Toast.makeText(this, biggerText, Toast.LENGTH_LONG);
-                toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
-                toast.show();
+                showMyMessage(R.string.pressure_invalid_input);
             }
         }
 
+    }
+    public void showMyMessage(int massage) {
+        String text = getString(massage).toString();
+        SpannableStringBuilder biggerText = new SpannableStringBuilder(text);
+        biggerText.setSpan(new RelativeSizeSpan(1.35f), 0, text.length(), 0);
+        Toast toast = Toast.makeText(this, biggerText, Toast.LENGTH_LONG);
+        toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+        toast.show();
     }
 }
