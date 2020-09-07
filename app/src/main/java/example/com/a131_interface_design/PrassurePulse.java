@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.SpannableStringBuilder;
 import android.text.style.RelativeSizeSpan;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.EditText;
@@ -24,6 +25,7 @@ public class PrassurePulse extends AppCompatActivity {
     EditText pulse;
     Switch tachicardia;
     TextView txtdateTime;
+    private static final String TAGPRASSURE = "Давление и пульс";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,8 +42,10 @@ public class PrassurePulse extends AppCompatActivity {
     }
 
     public void btnSaveClicked (View view) {
-        if (highPressure.getText().toString().equals("") && lowerPressure.getText().toString().equals("") && pulse.getText().toString().equals("")) {
+        Log.i(TAGPRASSURE, "Пользователь нажал на кнопку 'Сохранить'");
+        if (highPressure.getText().toString().equals("") || lowerPressure.getText().toString().equals("") || pulse.getText().toString().equals("")) {
             Toster.showMyMessage(R.string.Not_all_values_are_entered,this);
+            Log.i(TAGPRASSURE, "Пользователь ввел не все данные");
         } else {
             try {
                 int newHighPressure = Integer.parseInt(highPressure.getText().toString());
@@ -54,6 +58,7 @@ public class PrassurePulse extends AppCompatActivity {
                 startActivity(intent);
             } catch (Exception ex) {
                 Toster.showMyMessage(R.string.pressure_invalid_input,this);
+                Log.i(TAGPRASSURE, "Пользователь некорректно ввел данные");
             }
         }
     }

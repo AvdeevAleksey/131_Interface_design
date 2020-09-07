@@ -4,12 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
 public class Vitals extends AppCompatActivity {
     EditText weight;
     EditText steps;
+    private static final String TAGVITALS = "Жизненные показатели";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,8 +23,10 @@ public class Vitals extends AppCompatActivity {
     }
 
     public void btnSaveClicked (View view) {
+        Log.i(TAGVITALS, "Пользователь нажал на кнопку 'Сохранить'");
         if (weight.getText().toString().equals("") || steps.getText().toString().equals("")) {
             Toster.showMyMessage(R.string.Not_all_values_are_entered,this);
+            Log.i(TAGVITALS, "Пользователь ввел не все данные");
         } else {
             try {
                 int newWeight = Integer.parseInt(weight.getText().toString());
@@ -32,6 +36,7 @@ public class Vitals extends AppCompatActivity {
                 startActivity(intent);
             } catch (Exception ex) {
                 Toster.showMyMessage(R.string.pressure_invalid_input,this);
+                Log.i(TAGVITALS, "Пользователь некорректно ввел данные");
             }
         }
     }
