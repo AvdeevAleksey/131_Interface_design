@@ -17,9 +17,9 @@
         android:gravity="center"
         android:text="@string/weight"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/actPressureEditTextHigh2"
-        app:layout_constraintEnd_toStartOf="@+id/actPressureEditTextHigh2"
-        app:layout_constraintTop_toTopOf="@+id/actPressureEditTextHigh2"
+        app:layout_constraintBottom_toBottomOf="@+id/vitalsEditTextWeight"
+        app:layout_constraintEnd_toStartOf="@+id/vitalsEditTextWeight"
+        app:layout_constraintTop_toTopOf="@+id/vitalsEditTextWeight"
         app:layout_constraintVertical_bias="0.538" />
 
     <TextView
@@ -31,13 +31,13 @@
         android:gravity="center"
         android:text="@string/walk"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/actPressureEditTextHigh3"
-        app:layout_constraintEnd_toStartOf="@+id/actPressureEditTextHigh3"
-        app:layout_constraintTop_toTopOf="@+id/actPressureEditTextHigh3"
+        app:layout_constraintBottom_toBottomOf="@+id/vitalsEditTextSteps"
+        app:layout_constraintEnd_toStartOf="@+id/vitalsEditTextSteps"
+        app:layout_constraintTop_toTopOf="@+id/vitalsEditTextSteps"
         app:layout_constraintVertical_bias="0.423" />
 
     <EditText
-        android:id="@+id/actPressureEditTextHigh2"
+        android:id="@+id/vitalsEditTextWeight"
         android:layout_width="155dp"
         android:layout_height="58dp"
         android:background="#E7FBE7"
@@ -45,14 +45,14 @@
         android:gravity="center"
         android:inputType="number"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/actPressureEditTextHigh3"
+        app:layout_constraintBottom_toTopOf="@+id/vitalsEditTextSteps"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/actPressureEditTextHigh3"
+        android:id="@+id/vitalsEditTextSteps"
         android:layout_width="155dp"
         android:layout_height="58dp"
         android:background="#E7FBE7"
@@ -64,7 +64,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/actPressureEditTextHigh2" />
+        app:layout_constraintTop_toBottomOf="@+id/vitalsEditTextWeight" />
 
     <Button
         android:id="@+id/btnVitalsSave"
@@ -87,9 +87,9 @@
         android:layout_height="75dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        app:layout_constraintBottom_toBottomOf="@+id/actPressureEditTextHigh2"
-        app:layout_constraintStart_toEndOf="@+id/actPressureEditTextHigh2"
-        app:layout_constraintTop_toTopOf="@+id/actPressureEditTextHigh2"
+        app:layout_constraintBottom_toBottomOf="@+id/vitalsEditTextWeight"
+        app:layout_constraintStart_toEndOf="@+id/vitalsEditTextWeight"
+        app:layout_constraintTop_toTopOf="@+id/vitalsEditTextWeight"
         app:layout_constraintVertical_bias="0.411"
         app:srcCompat="@mipmap/ic_scale" />
 
@@ -99,9 +99,9 @@
         android:layout_height="75dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        app:layout_constraintBottom_toBottomOf="@+id/actPressureEditTextHigh3"
-        app:layout_constraintStart_toEndOf="@+id/actPressureEditTextHigh3"
-        app:layout_constraintTop_toTopOf="@+id/actPressureEditTextHigh3"
+        app:layout_constraintBottom_toBottomOf="@+id/vitalsEditTextSteps"
+        app:layout_constraintStart_toEndOf="@+id/vitalsEditTextSteps"
+        app:layout_constraintTop_toTopOf="@+id/vitalsEditTextSteps"
         app:layout_constraintVertical_bias="0.588"
         app:srcCompat="@mipmap/ic_walk" />
 

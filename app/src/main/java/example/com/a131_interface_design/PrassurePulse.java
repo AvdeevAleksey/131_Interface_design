@@ -41,7 +41,7 @@ public class PrassurePulse extends AppCompatActivity {
 
     public void btnSaveClicked (View view) {
         if (highPressure.getText().toString().equals("") && lowerPressure.getText().toString().equals("") && pulse.getText().toString().equals("")) {
-            showMyMessage(R.string.Not_all_values_are_entered);
+            Toster.showMyMessage(R.string.Not_all_values_are_entered,this);
         } else {
             try {
                 int newHighPressure = Integer.parseInt(highPressure.getText().toString());
@@ -53,17 +53,8 @@ public class PrassurePulse extends AppCompatActivity {
                 Intent intent = new Intent(PrassurePulse.this, Vitals.class);
                 startActivity(intent);
             } catch (Exception ex) {
-                showMyMessage(R.string.pressure_invalid_input);
+                Toster.showMyMessage(R.string.pressure_invalid_input,this);
             }
         }
-
-    }
-    public void showMyMessage(int massage) {
-        String text = getString(massage).toString();
-        SpannableStringBuilder biggerText = new SpannableStringBuilder(text);
-        biggerText.setSpan(new RelativeSizeSpan(1.35f), 0, text.length(), 0);
-        Toast toast = Toast.makeText(this, biggerText, Toast.LENGTH_LONG);
-        toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
-        toast.show();
     }
 }
